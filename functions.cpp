@@ -23,7 +23,7 @@ void custom_vec::prepend(type el) {
 void custom_vec::remove(int index) {
     type *arr2 = new type[len-1];   // Dichiarazione di un array temporaneo
     int count = 0;  // Conta il numero di elementi effettivamente inseriti nell'array
-    for (int i=0; i<len; i++) { // Popolazione array con gli elementi precedentemente presenti saltando l'elemento di indice i
+    for (int i=0; i<len; i++) { // Popolazione array con gli elementi precedentemente presenti saltando l'elemento di indice index
         if (i != index) {
         arr2[count] = arr[i];
         count++;
