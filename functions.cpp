@@ -34,7 +34,7 @@ void custom_vec::remove(int index) {
     this->arr = arr2;   // Assegna il nuovo array al puntatore this.arr
 }
 
-void custom_vec::sort(double (*func)(type), bool inverted=false) {      // Prende come argomento un puntatore a una funzione che prende un singolo argomento di tipo type e resituisce un bool
+void custom_vec::sort(double (*func)(type), bool inverted=false) {      // Prende come argomento un puntatore a una funzione che prende un singolo argomento di tipo type e resituisce un double
     // Implementazione di simple-sort secondo i valori restiuiti da func
     for (int i=0; i<len; i++) {
         for (int j=i+1; j<len; j++) {
