@@ -1,3 +1,7 @@
+/*
+https://github.com/Lvetto/Esame-informatica
+*/
+
 #include <iostream>
 using namespace std;
 #define type point  // Permette di modificare il tipo degli elementi del vettore in un solo passaggio. Sostituire "point" con il nome della struttura da utilizzare (ad es: float)
