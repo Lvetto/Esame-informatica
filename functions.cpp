@@ -53,6 +53,16 @@ void custom_vec<type>::sort(double (*func)(type), bool inverted) {      // Prend
         }
     }
  }
+ 
+template <class type>
+custom_vec<type> custom_vec<type>::filter(bool (*cond)(type)) { // Prende come argomento una funzione di tipo bool e restituisce un custom_vec<type> contenente tutti gli elementi per cui cond restiuisce vero
+    custom_vec<type> out;   // Inizializza elemento da restituire
+    for (int i=0; i<this->len; i++) {
+        if (cond(this->arr[i])) // Aggiunge solo gli elementi che verificano la funzione cond
+            out.append(this->arr[i]);
+    }
+    return out;
+}
 
 double Fc(point p) {
     return pow(p.w, 2) * sqrt(pow(p.x, 2)+pow(p.y, 2));
