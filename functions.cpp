@@ -58,4 +58,4 @@ double Fc(point p) {
     return pow(p.w, 2) * sqrt(pow(p.x, 2)+pow(p.y, 2));
 }
 
-template class custom_vec<point>;
+template class custom_vec<point>;   // Instanzializzazione classe template per il tipo point. Necessario per compilare correttamente la classe da un file separato dal main e dal .h
