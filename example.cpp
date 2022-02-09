@@ -1,3 +1,7 @@
+/*
+Questo file è fornito come esempio per l'utilizzo della classe vettore e delle sue funzioni.
+*/
+
 #include "functions.h"
 #include <fstream>
 
@@ -6,7 +10,7 @@ int main() {
     file.open("punti.dat", ios::in);
     if (!file.good()) throw runtime_error("Impossibile aprire il file");
 
-    custom_vec<point> punti;
+    custom_vec<point> punti; 
     while (true) {
         if (file.eof()) break;
         point t;
