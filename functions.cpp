@@ -1,6 +1,10 @@
 #include "functions.h"
+#include <cmath>
+#include <iostream>
+using namespace std;
 
-void custom_vec::append(type el) {
+template <class type>
+void custom_vec<type>::append(type el) {
     len++;  // Traccia l'aumento di dimensioni dell'array
     type *arr2 = new type[len]; // Dichiarazione di un array temporaneo
     for (int i=0; i<len-1; i++)     // Popolazione array con gli elementi contenuti nel vettore precedente
@@ -10,7 +14,8 @@ void custom_vec::append(type el) {
     this->arr = arr2;   // Assegna il nuovo array al puntatore this.arr
 }
 
-void custom_vec::prepend(type el) {
+template <class type>
+void custom_vec<type>::prepend(type el) {
     len++;  // Traccia l'aumento di dimensioni dell'array
     type *arr2 = new type[len]; // Dichiarazione di un array temporaneo
     arr2[0] = el;   // Aggiunta primo elemento (argomento della funzione)
@@ -20,7 +25,8 @@ void custom_vec::prepend(type el) {
     this->arr = arr2;   // Assegna il nuovo array al puntatore this.arr
 }
 
-void custom_vec::remove(int index) {
+template <class type>
+void custom_vec<type>::remove(int index) {
     type *arr2 = new type[len-1];   // Dichiarazione di un array temporaneo
     int count = 0;  // Conta il numero di elementi effettivamente inseriti nell'array
     for (int i=0; i<len; i++) { // Popolazione array con gli elementi precedentemente presenti saltando l'elemento di indice index
@@ -34,7 +40,8 @@ void custom_vec::remove(int index) {
     this->arr = arr2;   // Assegna il nuovo array al puntatore this.arr
 }
 
-void custom_vec::sort(double (*func)(type), bool inverted=false) {      // Prende come argomento un puntatore a una funzione che prende un singolo argomento di tipo type e resituisce un double
+template <class type>
+void custom_vec<type>::sort(double (*func)(type), bool inverted) {      // Prende come argomento un puntatore a una funzione che prende un singolo argomento di tipo type e resituisce un double
     // Implementazione di simple-sort secondo i valori restiuiti da func
     for (int i=0; i<len; i++) {
         for (int j=i+1; j<len; j++) {
@@ -46,3 +53,9 @@ void custom_vec::sort(double (*func)(type), bool inverted=false) {      // Prend
         }
     }
  }
+
+double Fc(point p) {
+    return pow(p.w, 2) * sqrt(pow(p.x, 2)+pow(p.y, 2));
+}
+
+template class custom_vec<point>;
