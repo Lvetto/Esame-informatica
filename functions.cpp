@@ -13,7 +13,7 @@ custom_vec<type>::custom_vec() {
 // Distruttore della classe. Libera la memoria usata da this->arr
 template <class type>
 custom_vec<type>::~custom_vec() {
-    delete [] arr;
+    delete [] this->arr;
 }
 
 template <class type>
