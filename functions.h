@@ -4,14 +4,13 @@ https://github.com/Lvetto/Esame-informatica
 #include <cmath>
 #include <iostream>
 using namespace std;
-//#define type point  // Permette di modificare il tipo degli elementi del vettore in un solo passaggio.
 
 struct point {
     float x,y,w,m;
 };
 
 // Implementazione di una classe wrapper per un array di tipo "type" con supporto per numero di elementi variabile e alcune funzioni utili per domande di esame frequenti
-template <class type>
+template <class type>   // Permette di creare istanze della classe per tipi diversi
 class custom_vec {
     public:
         int len=0;  // Tiene traccia della lunghezza dell'array, inizialmente nulla
@@ -23,4 +22,4 @@ class custom_vec {
         void sort(double (*func)(type), bool inverted); // Riordina in-place gli elementi dell'array secondo i valori double restituiti dalla funzione passata come parametro. Mettere inverted=true per ordine decrescente
 };
 
-double Fc(point p);
+double Fc(point p); // Per "esempio.cpp"
