@@ -20,6 +20,7 @@ class custom_vec {
         void prepend(type el);  // Aggiunge un elemento all'inizio dell'array dopo averne aumentato la lunghezza di 1
         void remove(int index); // Rimuove dall'array l'elemento di indice index e diminuisce la lunghezza di 1
         void sort(double (*func)(type), bool inverted); // Riordina in-place gli elementi dell'array secondo i valori double restituiti dalla funzione passata come parametro. Mettere inverted=true per ordine decrescente
+        custom_vec<type> filter(bool (*cond)(type));    // Restituisce un istanza di custom_vec<type> contenente gli elementi che verificano una condizione definita dalla funzione filter
 };
 
 double Fc(point p); // Per "esempio.cpp"
