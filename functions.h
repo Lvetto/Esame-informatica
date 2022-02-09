@@ -16,6 +16,8 @@ class custom_vec {
         int len=0;  // Tiene traccia della lunghezza dell'array, inizialmente nulla
         type *arr = new type[0];    // Puntatore all'array dinamico contenente gli elementi del vettore, inizialmente vuoto
 
+        custom_vec();   // Costruttore
+        ~custom_vec(); // Distruttore
         void append(type el);   // Aggiunge un elemento alla fine dell'array dopo averne aumentato la lunghezza di 1
         void prepend(type el);  // Aggiunge un elemento all'inizio dell'array dopo averne aumentato la lunghezza di 1
         void remove(int index); // Rimuove dall'array l'elemento di indice index e diminuisce la lunghezza di 1
