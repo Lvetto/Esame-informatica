@@ -3,6 +3,19 @@
 #include <iostream>
 using namespace std;
 
+// Costruttore della classe. Inizializza le variabili
+template <class type>
+custom_vec<type>::custom_vec() {
+    int len=0;  // Tiene traccia della lunghezza dell'array, inizialmente nulla
+    type *arr = new type[0];    // Puntatore all'array dinamico contenente gli elementi del vettore, inizialmente vuoto
+}
+
+// Distruttore della classe. Libera la memoria usata da this->arr
+template <class type>
+custom_vec<type>::~custom_vec() {
+    delete [] arr;
+}
+
 template <class type>
 void custom_vec<type>::append(type el) {
     len++;  // Traccia l'aumento di dimensioni dell'array
